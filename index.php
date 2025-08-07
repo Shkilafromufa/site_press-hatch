@@ -165,13 +165,13 @@
             </div>
 
             <!-- CTA Band -->
-            <div class="cta-band">
+            <!-- <div class="cta-band">
                 <div class="container">
                     <h3>-------------------------</h3>
                     <p>------------------------------</p>
                     <a href="#" class="btn secondary" onclick="openPopup()">Отправить заявку</a>
                 </div>
-            </div>
+            </div> -->
         </section>
 
         <!-- About Page -->
