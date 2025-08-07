@@ -2,10 +2,10 @@
             --bg: #1a1a1a;
             --bg-light: #2d2d2d;
             --text: #e8e8e8;
-            --accent: #4a9eff;
+            --accent: #5fa9ff;
             --accent-secondary: #00d4aa;
-            --accent-tertiary: #ff6b35;
-            --gray: #888888;
+            --accent-tertiary: #ffad00;
+            --gray: #9e9e9e;
             --green: #00c851;
             --warning: #ffbb33;
             --radius: 8px;
@@ -555,14 +555,15 @@
             gap: 1rem; 
         }
 
-        .footer-call { 
-            background: transparent; 
+        .footer-call {
+            background: transparent;
             border: 1px solid var(--accent);
             color: var(--accent);
         }
 
         .footer-call:hover {
-            background: var(--accent);
+            background: var(--accent-tertiary);
+            border-color: var(--accent-tertiary);
             color: white;
         }
 
