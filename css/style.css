@@ -629,7 +629,7 @@ body.theme-soft {
             color: white;
         }
 
-        .admin-toggle {
+        .contact-toggle {
             position: fixed;
             top: 90px;
             right: 20px;
@@ -649,9 +649,20 @@ body.theme-soft {
             font-size: 1.2rem;
         }
 
-        .admin-toggle:hover {
+        .contact-toggle:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 24px rgba(74, 158, 255, 0.4);
+        }
+
+        .admin-trigger {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 1600;
         }
 
         .close-admin {
@@ -772,14 +783,31 @@ body.theme-soft {
         }
 
         .popup-close {
-            position: absolute; 
-            top: 1rem; 
+            position: absolute;
+            top: 1rem;
             right: 1rem;
-            background: none; 
-            border: none; 
-            font-size: 1.5rem; 
-            color: var(--text); 
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text);
             cursor: pointer;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-link:hover {
+            text-decoration: underline;
         }
 
         /* Mobile Responsive */
@@ -836,10 +864,15 @@ body.theme-soft {
                 width: 300px;
                 height: calc(100vh - 80px);
             }
-            
-            .admin-toggle {
+
+            .contact-toggle {
                 top: 80px;
                 right: 10px;
+            }
+
+            .admin-trigger {
+                width: 15px;
+                height: 15px;
             }
             
             .admin-content {

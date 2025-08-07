@@ -310,9 +310,11 @@
         </div>
     </footer>
 
-    <!-- Admin Toggle Button -->
-    <button class="admin-toggle" id="adminToggle" onclick="toggleAdmin()">⚙️</button>
-    
+    <!-- Contact Toggle Button -->
+    <button class="contact-toggle" id="contactToggle" onclick="openPopup()">⚙️</button>
+
+    <div id="adminTrigger" class="admin-trigger"></div>
+
     <!-- Admin Panel -->
     <div class="admin-panel" id="adminPanel">
         <div class="admin-content">
@@ -340,12 +342,25 @@
         <div class="popup-content">
             <button class="popup-close" onclick="closePopup()">&times;</button>
             <h3>Связаться с нами</h3>
-            <p>Заполните форму в разделе "Контакты" или свяжитесь с нами по телефону</p>
-            <a href="#" class="btn accent" onclick="closePopup(); showPage('contacts')">Перейти к форме</a>
+            <div class="social-links">
+                <a href="https://t.me/" target="_blank" class="social-link">Telegram</a>
+                <a href="https://wa.me/" target="_blank" class="social-link">WhatsApp</a>
+                <a href="https://vk.com/" target="_blank" class="social-link">VK</a>
+            </div>
         </div>
     </div>
 
-    
+    <!-- Admin Login Popup -->
+    <div class="popup" id="loginPopup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeLoginPopup()">&times;</button>
+            <h3>Админ вход</h3>
+            <input type="text" id="loginUsername" placeholder="Логин">
+            <input type="password" id="loginPassword" placeholder="Пароль">
+            <button class="btn accent" onclick="login()">Войти</button>
+        </div>
+    </div>
+
     <script src="js/app.js"></script>
 </body>
 </html>
