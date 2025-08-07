@@ -38,7 +38,7 @@
                     <div class="hero-content">
                         <h1>Профессиональное изготовление и ремонт пресс-форм</h1>
                         <p>Более 10 лет опыта, 98% форм запускаются без доработок, расчет за 24 часа</p>
-                        <a href="#" class="btn accent" onclick="openPopup()">Связаться с нами</a>
+                        <a href="#" class="btn accent" onclick="openContacts()">Связаться с нами</a>
                     </div>
                 </div>
             </div>
@@ -169,7 +169,7 @@
                 <div class="container">
                     <h3>-------------------------</h3>
                     <p>------------------------------</p>
-                    <a href="#" class="btn secondary" onclick="openPopup()">Отправить заявку</a>
+                    <a href="#" class="btn secondary" onclick="openContacts()">Отправить заявку</a>
                 </div>
             </div>
         </section>
@@ -310,38 +310,18 @@
         </div>
     </footer>
 
-    <!-- Admin Toggle Button -->
-    <button class="admin-toggle" id="adminToggle" onclick="toggleAdmin()">⚙️</button>
-    
-    <!-- Admin Panel -->
-    <div class="admin-panel" id="adminPanel">
+    <!-- Contact Panel -->
+    <div class="admin-panel" id="contactPanel">
         <div class="admin-content">
             <div class="admin-header">
-                <h2>Управление услугами</h2>
-                <button class="close-admin" onclick="closeAdmin()">✕</button>
+                <h2>Связаться с нами</h2>
+                <button class="close-admin" onclick="closeContacts()">✕</button>
             </div>
-            
-            <div class="service-form">
-                <h3>Добавить новую услугу</h3>
-                <input type="text" id="serviceName" placeholder="Название услуги">
-                <textarea id="serviceDescription" rows="4" placeholder="Описание услуги"></textarea>
-                <textarea id="serviceFeatures" rows="3" placeholder="Особенности (каждая с новой строки)"></textarea>
-                <button class="btn accent" onclick="addService()">Добавить услугу</button>
-            </div>
-            
-            <div class="service-list" id="adminServicesList">
-                <!-- Admin services list will be loaded here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Popup -->
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <button class="popup-close" onclick="closePopup()">&times;</button>
-            <h3>Связаться с нами</h3>
-            <p>Заполните форму в разделе "Контакты" или свяжитесь с нами по телефону</p>
-            <a href="#" class="btn accent" onclick="closePopup(); showPage('contacts')">Перейти к форме</a>
+            <ul class="contact-links">
+                <li><a href="https://t.me/yourcompany" target="_blank">Telegram</a></li>
+                <li><a href="https://wa.me/yourcompany" target="_blank">WhatsApp</a></li>
+                <li><a href="https://vk.com/yourcompany" target="_blank">VK</a></li>
+            </ul>
         </div>
     </div>
 
