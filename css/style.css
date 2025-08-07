@@ -211,6 +211,7 @@ body.theme-soft {
         }
 
         .hero-bg {
+            filter: brightness(50%);
             position: absolute;
             inset: 0;
             width: 100%;
