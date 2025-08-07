@@ -32,9 +32,7 @@
         <section id="services" class="page-section active">
             <!-- Hero Section -->
             <div class="hero">
-                <div class="hero-video-placeholder">
-                    [Место для видео цеха]
-                </div>
+                <img src="assets/1.jpg" alt="Производственное помещение" class="hero-bg">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="hero-content">
@@ -118,24 +116,49 @@
                     <h2 class="section-title">Наши работы</h2>
                     <div class="gallery-slider">
                         <div class="slide">
-                            <div class="slide-placeholder">[Фото "до"]</div>
-                            <h4>Восстановление пресс-формы</h4>
-                            <p>Комплексный ремонт после 300K циклов</p>
+                            <img src="assets/2.jpg" alt="Подготовка пресс-форм" class="slide-image">
+                            <h4>Подготовка пресс-форм</h4>
+                            <p>Точная подготовка перед запуском</p>
                         </div>
                         <div class="slide">
-                            <div class="slide-placeholder">[Видео лазерной наплавки]</div>
-                            <h4>Лазерная наплавка</h4>
-                            <p>Точечное восстановление поврежденных участков</p>
+                            <img src="assets/3.jpg" alt="Рабочий процесс" class="slide-image">
+                            <h4>Рабочий процесс</h4>
+                            <p>Сборка и настройка узлов</p>
                         </div>
                         <div class="slide">
-                            <div class="slide-placeholder">[Фото "после"]</div>
-                            <h4>Готовая форма</h4>
-                            <p>Результат восстановительных работ</p>
+                            <img src="assets/4.jpg" alt="Станок в работе" class="slide-image">
+                            <h4>Станок в работе</h4>
+                            <p>Автоматизированная обработка деталей</p>
                         </div>
                         <div class="slide">
-                            <div class="slide-placeholder">[Фото производственного цеха]</div>
-                            <h4>Производственный процесс</h4>
-                            <p>CNC-обработка на современном оборудовании</p>
+                            <img src="assets/5.jpg" alt="Процесс обработки" class="slide-image">
+                            <h4>Процесс обработки</h4>
+                            <p>Стабильное производство</p>
+                        </div>
+                        <div class="slide">
+                            <img src="assets/6.jpg" alt="Высокая скорость обработки" class="slide-image">
+                            <h4>Высокая скорость обработки</h4>
+                            <p>Точное изготовление компонентов</p>
+                        </div>
+                        <div class="slide">
+                            <img src="assets/8.jpg" alt="Готовая пресс-форма" class="slide-image">
+                            <h4>Готовая пресс-форма</h4>
+                            <p>Финишный результат ремонта</p>
+                        </div>
+                        <div class="slide">
+                            <img src="assets/9.jpg" alt="Производственные масштабы" class="slide-image">
+                            <h4>Производственные масштабы</h4>
+                            <p>Объемные работы на участке</p>
+                        </div>
+                        <div class="slide">
+                            <img src="assets/10.jpg" alt="Новый станок" class="slide-image">
+                            <h4>Новый станок</h4>
+                            <p>Расширение парка оборудования</p>
+                        </div>
+                        <div class="slide">
+                            <img src="assets/11.jpg" alt="Ручной ремонт пресс-форм" class="slide-image">
+                            <h4>Ручной ремонт</h4>
+                            <p>Ювелирная доводка деталей вручную</p>
                         </div>
                     </div>
                 </div>
@@ -163,9 +186,7 @@
                             
                             <p>Наша философия — минимизировать время «идея → серия» и поддерживать форму в рабочем состоянии весь срок службы.</p>
                         </div>
-                        <div class="about-photo-placeholder">
-                            [Фото команды / производства]
-                        </div>
+                        <img src="assets/7.jpg" alt="Станок с сотрудником" class="about-photo">
                     </div>
                 </div>
             </div>
