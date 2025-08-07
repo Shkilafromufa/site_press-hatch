@@ -23,7 +23,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 let services = [];
 
 async function loadServices() {
-  const res = await fetch('service.php?action=list');
+  const res = await fetch('api/services.php');
   services = await res.json();
   const container = document.getElementById('services-container');
   container.innerHTML = '';
@@ -47,6 +47,29 @@ function openAdmin() {
 
 function closeAdmin() {
   document.getElementById('adminPanel').classList.remove('open');
+}
+
+async function toggleAdmin() {
+  const panel = document.getElementById('adminPanel');
+  if (panel.classList.contains('open')) {
+    closeAdmin();
+    return;
+  }
+  const status = await fetch('api/check_login.php').then(r => r.json());
+  if (!status.admin) {
+    const password = prompt('Введите пароль');
+    if (!password) return;
+    const login = await fetch('api/login.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password })
+    });
+    if (!login.ok) {
+      alert('Неверный пароль');
+      return;
+    }
+  }
+  openAdmin();
 }
 
 function loadAdminServices() {
@@ -75,7 +98,7 @@ async function addService() {
     return;
   }
   const features = featuresText.split('\n').map(f => f.trim()).filter(Boolean);
-  const res = await fetch('service.php?action=add', {
+  const res = await fetch('api/services.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, description, features })
@@ -94,7 +117,7 @@ async function addService() {
 
 async function deleteService(id) {
   if (!confirm('Удалить эту услугу?')) return;
-  const res = await fetch(`service.php?action=delete&id=${id}`, { method: 'DELETE' });
+  const res = await fetch(`api/services.php?id=${id}`, { method: 'DELETE' });
   if (res.ok) {
     await loadServices();
     loadAdminServices();
@@ -110,55 +133,25 @@ function closePopup() {
   document.getElementById('popup').classList.remove('open');
 }
 
-function openLoginPopup() {
-  document.getElementById('loginPopup').classList.add('open');
-}
-
-function closeLoginPopup() {
-  document.getElementById('loginPopup').classList.remove('open');
-}
-
-async function login() {
-  const username = document.getElementById('loginUsername').value.trim();
-  const password = document.getElementById('loginPassword').value;
-  const res = await fetch('service.php?action=login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ username, password })
-  });
-  if (res.ok) {
-    closeLoginPopup();
-    openAdmin();
-  } else {
-    alert('Неверные данные');
-  }
-}
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  alert('Заявка отправлена! Мы свяжемся с вами в течение 24 часов.');
+  this.reset();
+});
 
 setTimeout(openPopup, 45000);
 
-document.addEventListener('DOMContentLoaded', () => {
-  loadServices();
-  document.getElementById('adminTrigger').addEventListener('click', async () => {
-    const status = await fetch('service.php?action=check').then(r => r.json());
-    if (status.admin) {
-      openAdmin();
-    } else {
-      openLoginPopup();
-    }
-  });
-});
+document.addEventListener('DOMContentLoaded', loadServices);
 
 document.getElementById('popup').addEventListener('click', function (e) {
   if (e.target === this) closePopup();
 });
 
-document.getElementById('loginPopup').addEventListener('click', function (e) {
-  if (e.target === this) closeLoginPopup();
-});
-
 document.addEventListener('click', function (e) {
   const panel = document.getElementById('adminPanel');
-  if (panel.classList.contains('open') && !panel.contains(e.target)) {
+  const toggle = document.getElementById('adminToggle');
+  if (panel.classList.contains('open') && !panel.contains(e.target) && !toggle.contains(e.target)) {
     closeAdmin();
   }
 });
