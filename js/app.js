@@ -40,12 +40,97 @@ async function loadServices() {
   });
 }
 
-function openContacts() {
-  document.getElementById('contactPanel').classList.add('open');
+function openAdmin() {
+  document.getElementById('adminPanel').classList.add('open');
+  loadAdminServices();
 }
 
-function closeContacts() {
-  document.getElementById('contactPanel').classList.remove('open');
+function closeAdmin() {
+  document.getElementById('adminPanel').classList.remove('open');
+}
+
+async function toggleAdmin() {
+  const panel = document.getElementById('adminPanel');
+  if (panel.classList.contains('open')) {
+    closeAdmin();
+    return;
+  }
+  const status = await fetch('api/check_login.php').then(r => r.json());
+  if (!status.admin) {
+    const password = prompt('Введите пароль');
+    if (!password) return;
+    const login = await fetch('api/login.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password })
+    });
+    if (!login.ok) {
+      alert('Неверный пароль');
+      return;
+    }
+  }
+  openAdmin();
+}
+
+function loadAdminServices() {
+  const container = document.getElementById('adminServicesList');
+  container.innerHTML = '';
+  services.forEach(service => {
+    const item = document.createElement('div');
+    item.className = 'service-item';
+    item.innerHTML = `
+      <h4>${service.name}</h4>
+      <p>${service.description}</p>
+      <div class="service-actions">
+        <button class="btn btn-small btn-danger" onclick="deleteService(${service.id})">Удалить</button>
+      </div>
+    `;
+    container.appendChild(item);
+  });
+}
+
+async function addService() {
+  const name = document.getElementById('serviceName').value.trim();
+  const description = document.getElementById('serviceDescription').value.trim();
+  const featuresText = document.getElementById('serviceFeatures').value;
+  if (!name || !description) {
+    alert('Заполните все поля');
+    return;
+  }
+  const features = featuresText.split('\n').map(f => f.trim()).filter(Boolean);
+  const res = await fetch('api/services.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, description, features })
+  });
+  if (!res.ok) {
+    alert('Не удалось сохранить услугу');
+    return;
+  }
+  document.getElementById('serviceName').value = '';
+  document.getElementById('serviceDescription').value = '';
+  document.getElementById('serviceFeatures').value = '';
+  await loadServices();
+  loadAdminServices();
+  alert('Услуга добавлена!');
+}
+
+async function deleteService(id) {
+  if (!confirm('Удалить эту услугу?')) return;
+  const res = await fetch(`api/services.php?id=${id}`, { method: 'DELETE' });
+  if (res.ok) {
+    await loadServices();
+    loadAdminServices();
+  }
+}
+
+// Popup
+function openPopup() {
+  document.getElementById('popup').classList.add('open');
+}
+
+function closePopup() {
+  document.getElementById('popup').classList.remove('open');
 }
 
 document.getElementById('contactForm').addEventListener('submit', function (e) {
@@ -55,11 +140,18 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   this.reset();
 });
 
+setTimeout(openPopup, 45000);
+
 document.addEventListener('DOMContentLoaded', loadServices);
 
+document.getElementById('popup').addEventListener('click', function (e) {
+  if (e.target === this) closePopup();
+});
+
 document.addEventListener('click', function (e) {
-  const panel = document.getElementById('contactPanel');
-  if (panel.classList.contains('open') && !panel.contains(e.target)) {
-    closeContacts();
+  const panel = document.getElementById('adminPanel');
+  const toggle = document.getElementById('adminToggle');
+  if (panel.classList.contains('open') && !panel.contains(e.target) && !toggle.contains(e.target)) {
+    closeAdmin();
   }
 });

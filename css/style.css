@@ -757,20 +757,6 @@ body.theme-soft {
             z-index: 2000;
         }
 
-        .contact-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .contact-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-links a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
         .popup.open { 
             visibility: visible; 
             opacity: 1; 
