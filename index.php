@@ -296,7 +296,7 @@
     <div class="admin-panel" id="adminPanel">
         <div class="admin-content">
             <div class="admin-header">
-                <h2>Управление услугами2</h2>
+                <h2>Управление услугами</h2>
                 <button class="close-admin" onclick="closeAdmin()">✕</button>
             </div>
             
