@@ -634,7 +634,7 @@ body.theme-soft {
 
         .admin-header h2 {
             font-size: 1.1rem;
-            color: var(--accent);
+            color: white;
         }
 
         .admin-toggle {
@@ -691,7 +691,7 @@ body.theme-soft {
 
         .service-form h3 {
             font-size: 1rem;
-            color: var(--accent-secondary);
+            color:  #ffad00;
             margin-bottom: 0.5rem;
         }
 
