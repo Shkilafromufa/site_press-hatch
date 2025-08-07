@@ -40,7 +40,7 @@
                     <div class="hero-content">
                         <h1>Профессиональное изготовление и ремонт пресс-форм</h1>
                         <p>Более 10 лет опыта, 98% форм запускаются без доработок, расчет за 24 часа</p>
-                        <a href="#" class="btn accent" onclick="openPopup()">Получить расчет</a>
+                        <a href="#" class="btn accent" onclick="openPopup()">Связаться с нами</a>
                     </div>
                 </div>
             </div>
@@ -235,7 +235,7 @@
                             
                             <div class="contact-item">
                                 <strong>Email:</strong>
-                                <p>info@pressform.ru</p>
+                                <p>)_______.ru</p>
                             </div>
                             
                             <div class="contact-item">
@@ -245,7 +245,7 @@
                             
                             <div class="contact-item">
                                 <strong>График работы:</strong>
-                                <p>Пн-Пт 09:00-18:00 (UTC+3, Москва)</p>
+                                <p>Пн-Пт 09:00-18:00 (UTC+5, Уфа)</p>
                             </div>
                             
                             <div class="contact-item">
@@ -266,7 +266,7 @@
                                     📎 Прикрепить файл (3D-модель, чертежи)
                                     <input type="file" name="file" accept=".dwg,.step,.igs,.pdf">
                                 </label>
-                                <button type="submit" class="btn accent">Отправить заявку</button>
+                                <button type="submit" class="btn accent">Связаться с нами</button>
                             </form>
                         </div>
                     </div>
@@ -280,7 +280,7 @@
         <div class="container">
             <div class="footer-flex">
                 <div>
-                    <p>&copy; 2025 ПрессФорм. Все права защищены.</p>
+                    <p>&copy; 2025. Все права защищены.</p>
                 </div>
                 <div>
                     <a href="#" class="btn footer-call">Быстрый звонок</a>
@@ -318,7 +318,7 @@
     <div class="popup" id="popup">
         <div class="popup-content">
             <button class="popup-close" onclick="closePopup()">&times;</button>
-            <h3>Получить расчет</h3>
+            <h3>Связаться с нами</h3>
             <p>Заполните форму в разделе "Контакты" или свяжитесь с нами по телефону</p>
             <a href="#" class="btn accent" onclick="closePopup(); showPage('contacts')">Перейти к форме</a>
         </div>
