@@ -27,11 +27,11 @@ async function loadServices() {
   services = await res.json();
   const container = document.getElementById('services-container');
   container.innerHTML = '';
-  services.forEach(service => {
+  services.forEach((service, index) => {
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
-      <div class="card-icon-placeholder">${service.name.charAt(0)}</div>
+    <div class="card-icon-placeholder">${index + 1}</div>
       <h3>${service.name}</h3>
       <p>${service.description}</p>
       <ul>${service.features.map(f => `<li>${f}</li>`).join('')}</ul>

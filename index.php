@@ -12,7 +12,7 @@
     <!-- Header -->
     <header class="site-header">
         <div class="container flex-between">
-            <div class="logo">ПрессФорм</div>
+            <div class="logo">Альтернатива</div>
             <nav class="site-nav" id="nav">
                 <a href="#" data-page="services" class="nav-link active">Наши услуги</a>
                 <a href="#" data-page="about" class="nav-link">О компании</a>
