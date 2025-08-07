@@ -103,7 +103,7 @@ body.theme-soft {
         }
 
         .btn.secondary {
-            background: var(--accent-secondary);
+            background: #ffad00;
             color: #fff;
         }
 
@@ -438,8 +438,12 @@ body.theme-soft {
 
         /* CTA Band */
         .cta-band {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-tertiary) 100%);
-            color: #fff;
+            background: linear-gradient(
+                135deg,
+                #b0c4de 0%,     /* светло-голубой/серый */
+                #d3d3d3 100%     /* светло-серый */
+              );
+            color: white;
             padding: 2rem 0;
             text-align: center;
         }
